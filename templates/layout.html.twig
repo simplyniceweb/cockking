@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title '' %} - My Silex Application</title>
-
+        <title>{% block title '' %} - Home</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
-
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
     </head>
     <body>
+
+        {% include "navbar.twig" %}
+
+        {% set url = asset('image/cock-bg.jpg') %}
+        {% set css = 'no-repeat center center; background-size: cover; -webkit-background-size: cover;-moz-background-size: cover; -o-background-size: cover;' %}
+        <div id="background-image" style="background: url({{ url }}) {{ css }} "></div>
+        <div id="background-overlay"></div>
         {% block content %}{% endblock %}
     </body>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="//www.gstatic.com/firebasejs/5.3.0/firebase.js"></script> -->
+    <!-- <script src="{{ asset('/scripts/scripts.js') }}"></script> -->
 </html>
